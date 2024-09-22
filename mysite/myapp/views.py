@@ -1,9 +1,13 @@
+# django
 from django.shortcuts import render
 from django.http import HttpResponse
 
+# my_project
+from myapp.models import Product
+
 
 def index(request):
-    items = ["iphone", "xiomi", "samsung"]
+    items = Product.objects.all()
     return HttpResponse(items)
 
 

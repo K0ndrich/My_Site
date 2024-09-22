@@ -6,7 +6,7 @@
 
     <h2>
       {% for item in items %}
-        ID: {{item.id}} | Имя: {{ item.name }} | Цена: {{ item.price }} | Описание: {{ item.description }} <br>
+        <a href="/myapp/hello/{{item.id}}">ID: {{ item.id }} | Имя: {{ item.name }} | Цена: {{ item.price }} | Описание: {{ item.description }} <br /></a>
       {% endfor %}
     </h2>
   </body>

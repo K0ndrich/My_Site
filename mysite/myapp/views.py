@@ -8,8 +8,9 @@ from myapp.models import Product
 
 def index(request):
     items = Product.objects.all()
-    return HttpResponse(items)
+    context = {"items": items}
+    return render(request=request, template_name="myapp/index.html", context=context)
 
 
 def contacts(request):
-    return HttpResponse("<h1>Ето Наши Контакты</h1>")
+    return render(request=request, template_name="myapp/contacts.html")

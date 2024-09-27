@@ -1,5 +1,11 @@
+{% comment %}указываем что в текущем файле будем использовать статические файлы{% endcomment %}
+{% load static %}
+
 <html>
-  <head></head>
+  <head>
+    {% comment %}подключение статических файлов, а именной файла style.css{% endcomment %}
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}" />
+  </head>
 
   <body>
     <h1>This is index template</h1>

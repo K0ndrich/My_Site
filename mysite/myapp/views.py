@@ -17,7 +17,3 @@ def indexItem(request, id):
     item = Product.objects.get(id=id)
     context = {"item": item}
     return render(request=request, template_name="myapp/detail.html", context=context)
-
-
-def contacts(request):
-    return render(request=request, template_name="myapp/contacts.html")

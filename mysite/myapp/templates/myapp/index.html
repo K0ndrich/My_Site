@@ -4,11 +4,11 @@
 <html>
   <head>
     {% comment %}подключение статических файлов, а именной файла style.css{% endcomment %}
-    <link rel="stylesheet" href="{% static 'myapp/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}" />
   </head>
 
-  <body>
-    <h1>This is index template</h1>
+  <body class="bg-sky-500">
+    <h1 >This is index template</h1>
 
     <h2>
       {% for item in items %}

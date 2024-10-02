@@ -7,9 +7,20 @@
     <link rel="stylesheet" href="{% static 'myapp/styles.css' %}" />
   </head>
 
-  <body class="bg-sky-500">
-    <h1 >This is index template</h1>
-
+  <body>
+    {% comment %}наш{% endcomment %}
+    <nav>
+      <div>
+        <div>
+          <div>
+            <div class="flex">
+              <img class="h-8 w-8" src="{% static 'myapp/images/shop.png' %} " alt="logo" />
+              <span class='text-xl'>Kondrich-Shop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <h2>
       {% for item in items %}
         <a href="{% url 'myapp:detail' item.id %}">ID: {{ item.id }} | Имя: {{ item.name }} | Цена: {{ item.price }} | Описание: {{ item.description }} <br /></a>

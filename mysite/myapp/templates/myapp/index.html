@@ -1,26 +1,30 @@
-{% extends "myapp/base.html" %}
+{% extends 'myapp/base.html' %}
 {% load static %}
 
-
 {% block content %}
-      <nav class="bg-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="flex justify-between">
-            <div class="flex space-x-7">
-              <div>
-                <a href="#" class="flex items-center px-2 pu-4">
-                <img class="h-8 w-8" src="{% static 'myapp/images/shop.png' %} " alt="logo" />
-                <span class='text-xl'>Kondrich-Shop</span>
-                </a>
-              </div>
-            </div>
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-7">
+          <div>
+            <a href="#" class="flex items-center px-2 pu-4">
+              <img class="h-8 w-8" src="{% static 'myapp/images/shop.png' %} " alt="logo" />
+              <span class="text-gray-500 font-semibold text-xl">Kondrich-Shop</span>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Home</a>
+            <a href="#" class="py-4 px-2 text-gray-500 font-semibold">About</a>
+            <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contacts</a>
           </div>
         </div>
-      </nav>
+      </div>
+    </div>
+  </nav>
 
-      <h4>
-        {% for item in items %}
-          <a href="{% url 'myapp:detail' item.id %}">ID: {{ item.id }} | Имя: {{ item.name }} | Цена: {{ item.price }} | Описание: {{ item.description }} <br /></a>
-        {% endfor %}
-      </h4>
-      {% endblock content %}
+  <h4>
+    {% for item in items %}
+      <a href="{% url 'myapp:detail' item.id %}">ID: {{ item.id }} | Имя: {{ item.name }} | Цена: {{ item.price }} | Описание: {{ item.description }} <br /></a>
+    {% endfor %}
+  </h4>
+{% endblock %}

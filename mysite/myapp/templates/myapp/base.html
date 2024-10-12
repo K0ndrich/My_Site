@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    {% comment %}подключение статических файлов, а именной файла style.css{% endcomment %}
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}" />
+    <title>Документ</title>
+  </head>
+  <body>
+    {% block content %}
+
+    {% endblock %}
+  </body>
+</html>

@@ -1,30 +1,25 @@
+{% extends "myapp/base.html" %}
 {% comment %}указываем что в текущем файле будем использовать статические файлы{% endcomment %}
 {% load static %}
 
-<html>
-  <head>
-    {% comment %}подключение статических файлов, а именной файла style.css{% endcomment %}
-    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}" />
-  </head>
 
-  <body>
-    {% comment %}наш{% endcomment %}
-    <nav>
+{% block content %}
+<nav>
+  <div>
+    <div>
       <div>
-        <div>
-          <div>
-            <div class="flex">
-              <img class="h-8 w-8" src="{% static 'myapp/images/shop.png' %} " alt="logo" />
-              <span class='text-xl'>Kondrich-Shop</span>
-            </div>
-          </div>
+        <div class="flex">
+          <img class="h-8 w-8" src="{% static 'myapp/images/shop.png' %} " alt="logo" />
+          <span class='text-xl'>Kondrich-Shop</span>
         </div>
       </div>
-    </nav>
-    <h2>
-      {% for item in items %}
-        <a href="{% url 'myapp:detail' item.id %}">ID: {{ item.id }} | Имя: {{ item.name }} | Цена: {{ item.price }} | Описание: {{ item.description }} <br /></a>
-      {% endfor %}
-    </h2>
-  </body>
-</html>
+    </div>
+  </div>
+</nav>
+
+<h2>
+  {% for item in items %}
+    <a href="{% url 'myapp:detail' item.id %}">ID: {{ item.id }} | Имя: {{ item.name }} | Цена: {{ item.price }} | Описание: {{ item.description }} <br /></a>
+  {% endfor %}
+</h2>
+{% endblock content %}

@@ -1,13 +1,15 @@
 {% extends 'myapp/base.html' %}
 
 {% block content %}
-  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-3 lg:grid-cols-3 gap-3">
+  <div class="p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4">
     {% for item in items %}
       <a href="{% url 'myapp:detail' item.id %}">
-        <div class="rounded overflow-hidden shadow-lg">
-          <img class="w-full" src="{{ item.image.url }}" alt="" />
+        <div class="rounded overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+          <img class="w-full h-48 object-cover" src="{{ item.image.url }}" alt="{{ item.name }}" />
           <div class="px-6 py-4">
-            <p>{{ item.name }}</p>
+            <p class="font-bold text-xl">{{ item.name }}</p>
+            <p class="font-bold text-xl text-green-500">${{ item.price }}</p>
+            <p class="text-gray-600">{{ item.description|truncatewords:10 }}</p>
           </div>
         </div>
       </a>

@@ -23,4 +23,19 @@ def indexItem(request, my_id):
 
 # страница для добавление нового товара на сайт
 def add_item(request):
+    # если запрос к сайту POST как мы укзаали в html форме <form method="post">
+    if request.method == "POST":
+        # берем значение поля формы , где указали name="name"
+        name = request.POST.get("name")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        # внутри FILES храниться картинка, которую пользователь прередал на сайте, ну и другие файлы
+        # берем значение поля формы , где указали name="upload"
+        image = request.FILES["upload"]
+
+        # создаме ячейку с данными, но еще ее не сохраняем
+        item = Product(name=name, price=price, description=description, image=image)
+        # сохраняем новосозданую ячейку в базе данных
+        item.save()
+
     return render(request, template_name="myapp/additem.html")

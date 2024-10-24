@@ -43,6 +43,16 @@ def add_item(request):
 
 # представления для изменения уже существующий елементов(товаром) в базе данных
 def update_item(request, my_id):
+    
     item = Product.objects.get(id=my_id)
+    
+    if request.method == "POST":
+        item.name = request.POST.get("name")
+        item.price = request.POST.get("price")
+        item.description = request.POST.get("description")
+        item.image = request.FILES["upload"]
+        item.save()
+
     context = {"item": item}
+
     return render(request, template_name="myapp/updateitem.html", context=context)

@@ -39,3 +39,10 @@ def add_item(request):
         item.save()
 
     return render(request, template_name="myapp/additem.html")
+
+
+# представления для изменения уже существующий елементов(товаром) в базе данных
+def update_item(request, my_id):
+    item = Product.objects.get(id=my_id)
+    context = {"item": item}
+    return render(request, template_name="myapp/updateitem.html", context=context)

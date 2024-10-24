@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # добавляет улучшение пердставление дат и числе в файлах html
+    "django.contrib.humanize",
     "myapp",
 ]
 

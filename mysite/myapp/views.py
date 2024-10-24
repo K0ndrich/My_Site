@@ -13,7 +13,7 @@ def index(request):
 
 
 # id значение передаеться пользователем в url-адрессе  # -> http://127.0.0.1:8000/myapp/hello/id/
-def indexItem(request, id):
-    item = Product.objects.get(id=id)
+def indexItem(request, my_id):
+    item = Product.objects.get(id=my_id)
     context = {"item": item}
     return render(request=request, template_name="myapp/detail.html", context=context)
